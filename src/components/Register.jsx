@@ -79,7 +79,7 @@ const Register = () => {
 
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      const response = await axios.post('http://localhost:5000/users/register', values, {
+      const response = await axios.post('https://ecommerce-5wip.onrender.com/users/register', values, {
         withCredentials: true,
       });
       console.log(response.data);

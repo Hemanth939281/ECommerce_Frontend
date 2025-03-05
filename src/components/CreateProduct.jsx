@@ -38,17 +38,10 @@ const CreateProduct = () => {
       formData.append('file', productData.image); // Append the image file
 
       // Upload image via your backend
-      const response = await axios.post('http://localhost:5000/api/upload', formData, {
+      const response = await axios.post('https://ecommerce-5wip.onrender.com/api/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data', authorization: token },
         withCredentials: true, // Send the token
       });
-      const res = await axios.get("http://localhost:5000/api/upload", {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-            Authorization: token
-        },
-        withCredentials:true
-    });
 
       return response.data.url; // Return the Cloudinary image URL
     } catch (error) {
@@ -78,7 +71,7 @@ const CreateProduct = () => {
       };
 
       // Send product data to backend for product creation
-      const response = await axios.post('http://localhost:5000/api/products', productDetails, {
+      const response = await axios.post('https://ecommerce-5wip.onrender.com/api/products', productDetails, {
         headers: { authorization: token },
         withCredentials: true, // Send token and cookies
       });

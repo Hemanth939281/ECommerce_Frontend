@@ -14,7 +14,7 @@ const UserAPI = (token) => {
         
         const getUser = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/users/info", {
+                const res = await axios.get("https://ecommerce-5wip.onrender.com/users/info", {
                     headers: { Authorization: token },
                     withCredentials: true,
                 });
@@ -26,7 +26,7 @@ const UserAPI = (token) => {
                 
                 // Fetch cart data
                 try {
-                    const cartRes = await axios.get("http://localhost:5000/api/getCart", {
+                    const cartRes = await axios.get("https://ecommerce-5wip.onrender.com/api/getCart", {
                         headers: { Authorization: token },
                     });
                     setCart(cartRes.data.cart);
@@ -61,7 +61,7 @@ const UserAPI = (token) => {
         
         try {
             const res = await axios.post(
-                "http://localhost:5000/api/updateCart",
+                "https://ecommerce-5wip.onrender.com/api/updateCart",
                 { cart: newCart }, // Backend expects entire cart array
                 { headers: { Authorization: token } }
             );
@@ -86,7 +86,7 @@ const UserAPI = (token) => {
         }
         
         try {
-            const res = await axios.delete(`http://localhost:5000/api/deleteCartItem/${productId}`, {
+            const res = await axios.delete(`https://ecommerce-5wip.onrender.com/api/deleteCartItem/${productId}`, {
                 headers: { Authorization: token },
             });
             

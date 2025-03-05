@@ -35,7 +35,7 @@ const Home = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/products");
+                const res = await axios.get("https://ecommerce-5wip.onrender.com/api/products");
                 console.log("Fetched Products:", res.data); // Debugging
         
                 // Check if the response contains a 'products' array
@@ -61,7 +61,7 @@ const Home = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/category");
+                const res = await axios.get("https://ecommerce-5wip.onrender.com/api/category");
                 console.log("Fetched Categories:", res.data); // Debugging
                 setCategories(res.data);
             } catch (error) {
@@ -108,7 +108,7 @@ const Home = () => {
     // Handle product delete
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/products/${id}`);
+            await axios.delete(`https://ecommerce-5wip.onrender.com/api/products/${id}`);
             setFilteredProducts((prev) => prev.filter((product) => product._id !== id));
             toast.success("Product deleted successfully");
         } catch (error) {

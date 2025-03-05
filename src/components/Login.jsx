@@ -47,7 +47,7 @@ const LoginForm = () => {
 
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      const response = await axios.post('http://localhost:5000/users/login', values, {
+      const response = await axios.post('https://ecommerce-5wip.onrender.com/users/login', values, {
         withCredentials: true,
       });
       localStorage.setItem('accessToken', response.data.accessToken);

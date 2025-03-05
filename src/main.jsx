@@ -10,9 +10,8 @@ import Login from './components/Login.jsx';
 import Cart from './components/Cart.jsx';
 import ProductDetails from './components/ProductDetails.jsx';
 import Register from './components/Register.jsx';
-import CreateProduct from './components/createProduct.jsx';
+import CreateProduct from './components/CreateProduct.jsx';
 import Contact from './components/Contact..jsx';
-
 const appRouter = createBrowserRouter(
     [
         {
